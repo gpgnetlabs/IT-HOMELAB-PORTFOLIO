@@ -1,0 +1,33 @@
+whoami
+cd
+cd \
+cd users
+cd gpgvm
+cd
+dir
+mkdir IT-Labs
+dir
+cd it-labs
+cd
+echo My first IT lab > notes.txt
+dir
+type notes.txt
+echo My 2nd It Lab > notes.txt
+dir
+type notes.txt
+copy notes.txt backup.txt
+dir
+type backup.txt
+ren backup.txt notes-backup.txt
+dir
+mkdir Projects
+dir
+cd projects
+cd
+ echo Finish CompTIA A+ > notes.txt
+dir
+cd
+dir
+type notes.txt
+cd
+doskey /history > commands.txt
