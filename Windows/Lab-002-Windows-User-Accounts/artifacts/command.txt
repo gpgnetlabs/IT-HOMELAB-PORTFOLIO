@@ -1,0 +1,4 @@
+whoami
+whoami /groups
+lusrmgr.msc
+compmgmt.msc
