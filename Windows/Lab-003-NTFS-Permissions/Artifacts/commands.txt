@@ -1,0 +1,11 @@
+compmgmt.msc
+
+whoami
+
+whoami /groups
+
+icacls "C:\Shared\PermissionsLab"
+
+explorer.exe
+
+notepad.exe

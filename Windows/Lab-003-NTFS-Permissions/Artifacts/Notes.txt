@@ -1,0 +1,11 @@
+Lab Notes
+
+- NTFS permissions determine access to files and folders.
+- Ownership is separate from permissions.
+- Users inherit permissions through group membership.
+- Explicit Deny overrides Allow.
+- Effective permissions combine all applicable Allow permissions.
+- Inherited permissions come from parent folders.
+- Standard users should receive only the permissions required to perform their job.
+- The Effective Access tool can calculate a user's actual permissions.
+- Read & Execute allows viewing files but prevents modifying or deleting them.
