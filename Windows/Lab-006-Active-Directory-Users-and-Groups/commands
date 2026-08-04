@@ -1,0 +1,31 @@
+# Commands Used
+
+## Verify Domain
+
+```powershell
+Get-ADDomain
+```
+
+## Verify Forest
+
+```powershell
+Get-ADForest
+```
+
+## List Users
+
+```powershell
+Get-ADUser -Filter *
+```
+
+## List Groups
+
+```powershell
+Get-ADGroup -Filter *
+```
+
+## List Organizational Units
+
+```powershell
+Get-ADOrganizationalUnit -Filter *
+```

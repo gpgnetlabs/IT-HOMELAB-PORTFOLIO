@@ -1,0 +1,56 @@
+# Notes
+
+## Objectives
+
+- Navigate Active Directory Users and Computers.
+- Create Organizational Units (OUs).
+- Create security groups.
+- Create domain user accounts.
+- Organize users into departments.
+- Understand how Active Directory stores objects.
+
+## Organizational Units
+
+- Users
+- Computers
+- Servers
+- Groups
+- IT
+- HR
+- Accounting
+- Disabled Objects
+
+## Security Groups
+
+- IT_Admins
+- HelpDesk
+- HR
+- Accounting
+- Managers
+
+## Users Created
+
+### IT
+
+- Sarah Parker
+- John Carter
+- Mike Chen
+
+### HR
+
+- Emily Davis
+- Laura Garcia
+
+### Accounting
+
+- David Miller
+- Olivia Johnson
+
+## Skills Learned
+
+- Active Directory administration
+- Organizational Unit management
+- Security Group management
+- User account creation
+- User organization
+- Windows Server administration
