@@ -1,75 +1,59 @@
-# Lab 001 — Packet Tracer Introduction
+# Lab 001 - Packet Tracer Introduction
 
-**Platform:** Cisco Packet Tracer  
-**Course:** Jeremy's IT Lab — CCNA 200-301  
-**Exercise:** Day 01 Lab — Packet Tracer Introduction  
-**Reference:** [Jeremy's IT Lab video](https://www.youtube.com/watch?v=a1Im6GYaSno)  
-**Status:** Topology screenshot reviewed; Packet Tracer project file included (not independently opened in Cisco Packet Tracer)
+**Course:** [Jeremy's IT Lab - Day 01](https://www.youtube.com/watch?v=a1Im6GYaSno)  
+**Software:** Cisco Packet Tracer  
+**Topic:** Getting familiar with network devices and a basic multi-site topology
 
-## Objective
+## About this lab
 
-Build a basic, multi-site network topology in Cisco Packet Tracer to become familiar with adding, naming, and connecting networking devices. Identify the roles of routers, Layer 2 switches, firewalls, and endpoints in a branch-to-branch network design.
+I'm working through Jeremy's IT Lab as part of my CCNA studies and using this repository to keep track of the hands-on labs I complete.
 
-## Network Topology
+This first lab is an introduction to Packet Tracer. The topology has two branches, one in New York and one in Tokyo, connected through a router representing the Internet. The goal here was to get familiar with the devices in the workspace and how they connect, rather than configure a working network.
 
-The screenshot shows two branch sites connected through a router representing the Internet, plus an external laptop labeled `Laptop0`. This laptop represents an outside endpoint in the training diagram; the screenshot does not demonstrate any attack.
+## My topology
 
-- **New York:** PC1, PC2, SW1 (Cisco 2960), R1 (Cisco 2911), FW1 (Cisco ASA 5505)
-- **Internet:** A Cisco 2911 router labeled `The Internet`, and Laptop0
-- **Tokyo:** R2 (Cisco 2911), FW2 (Cisco ASA 5505), SW2 (Cisco 2960), SRV1, SRV2
+![Packet Tracer network topology](Screenshots/network-topology.png)
 
-![Completed Network Topology](Screenshots/network-topology.png)
+The network includes:
 
-### Logical Connections
+- **New York:** Two PCs (PC1 and PC2), a 2960 switch (SW1), a 2911 router (R1), and an ASA 5505 firewall (FW1).
+- **Internet:** A 2911 router labeled `The Internet`, with a laptop connected to it.
+- **Tokyo:** A 2911 router (R2), an ASA 5505 firewall (FW2), a 2960 switch (SW2), and two servers (SRV1 and SRV2).
+
+The basic connection path looks like this:
 
 ```text
 PC1 ─┐
      ├─ SW1 ─ R1 ─ FW1 ─ The Internet ─ R2 ─ FW2 ─ SW2 ─ SRV1
 PC2 ─┘                         │                         └─ SRV2
                               │
-                         Laptop0
+                           Laptop0
 ```
 
-**Design note:** The firewalls are placed differently at the two sites, matching the training exercise. Firewall placement depends on network architecture and security requirements.
+## What I worked on
 
-## Implementation
+- Getting familiar with the Packet Tracer workspace and the different types of network devices.
+- Looking at how PCs and servers connect to switches on each LAN.
+- Following the connection from each branch through its router and firewall toward the Internet.
+- Organizing the topology so the devices and links are easy to follow.
 
-The submitted screenshot confirms a Packet Tracer logical topology containing the devices and physical links listed above. The screenshot alone cannot establish whether devices were added manually or supplied by a starter file, which cable selection method was used, or whether the `.pkt` file has been saved. Record those workflow details only after confirming them.
+## What I noticed
 
-## Verification
+The links between the end devices and their switches show green status indicators in my screenshot. Several of the links involving routers and firewalls show red indicators.
 
-> The checkboxes below reflect what is visible in the submitted topology screenshot. The saved project file still needs to be verified.
+That's an important difference: **having devices connected in a diagram doesn't automatically mean the network is working.** There are still things like interface status, IP addressing, and routing to consider. I haven't included ping tests or claimed end-to-end connectivity for this introductory lab.
 
-- [x] All expected network devices appear in the logical workspace.
-- [x] The New York branch is connected in the order PC1/PC2 → SW1 → R1 → FW1 → Internet.
-- [x] The Tokyo branch is connected in the order Internet → R2 → FW2 → SW2 → SRV1/SRV2.
-- [x] Laptop0 is connected to the Internet router.
-- [x] Device labels are clear and connections match the reference diagram.
-- [ ] The completed `.pkt` file opens successfully in Cisco Packet Tracer.
-- [x] A screenshot of the finished topology is saved in `Screenshots/network-topology.png`.
+## What I'm taking away
 
-**Link-state observation:** In the submitted screenshot, the endpoint-to-switch links show green indicators, while many router/firewall-facing links show red indicators. The image supports a completed topology layout, **not** an end-to-end working network. Router interfaces may require enabling/configuration in subsequent labs. No successful pings or traffic tests are claimed.
+This lab is a starting point for understanding the layout of a network. A switch connects devices on a local network, routers move packets between different IP networks, and firewalls can control which traffic is allowed through.
 
-**Scope:** This introductory lab demonstrates topology construction only. IP addressing, routing, firewall security policies, and end-to-end connectivity have not been evidenced here.
+I'm keeping these notes as I go so I can look back at the basics when I move into configuring and troubleshooting networks in later labs.
 
-## Key Concepts
+## Lab files
 
-| Component | Role in the topology |
-| --- | --- |
-| Router | Connects distinct networks and forwards IP packets between them when configured |
-| Switch | Connects devices within a LAN and forwards Ethernet frames based on MAC addresses |
-| Firewall | Can inspect and control permitted traffic according to configured security policies |
-| PC / Server | Represents end-user systems and network services |
-| Internet router | Simulates the intermediary network connecting the two sites |
+- [Packet Tracer project](Lab-001.pkt)
+- [Topology screenshot](Screenshots/network-topology.png)
 
-## Lessons Learned
+## Credit
 
-This exercise introduces the workflow of constructing network diagrams in a simulator, selecting different classes of devices, assigning meaningful device names, and connecting multi-site network components. It also illustrates that routers, switches, and firewalls serve distinct functions in network architecture.
-
-## Next Steps
-
-Proceed to the Day 02 connecting-devices lab and document cable selection, interface connections, and how cable/media types affect network design.
-
-## Attribution
-
-This project is a personal learning exercise based on [Jeremy's IT Lab](https://www.youtube.com/watch?v=a1Im6GYaSno). The documentation should reflect my own completed work and verification. Jeremy's course materials and original starter files belong to their respective owners.
+This lab is based on [Jeremy's IT Lab](https://www.youtube.com/watch?v=a1Im6GYaSno). The course and original exercise are his; these are my own study notes and lab evidence.
