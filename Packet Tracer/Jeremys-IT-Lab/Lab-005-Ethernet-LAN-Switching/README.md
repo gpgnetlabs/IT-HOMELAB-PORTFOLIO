@@ -2,50 +2,70 @@
 
 **Course:** [Jeremy's IT Lab - Ethernet LAN Switching](https://youtu.be/Ig0dSaOQDI8)  
 **Software:** Cisco Packet Tracer  
-**Topic:** MAC address tables, ARP, and Ethernet frame forwarding
+**Topic:** MAC address learning, ARP, and Ethernet frame forwarding
 
 ## About this lab
 
-This lab brings together the Ethernet switching lessons from Days 05 and 06 of Jeremy's IT Lab. Instead of just connecting devices, I worked with a small LAN to look at how switches learn MAC addresses and decide where to send frames.
+This lab covers the Ethernet switching lessons from Days 05 and 06. I used a small network with two switches and four PCs to get a better idea of how switches learn MAC addresses and forward frames.
 
-The main idea was to see what happens when one PC tries to communicate with another, especially before the switches have learned where the devices are.
+I also got to use the switch CLI to look at its MAC address table and clear the entries so I could see the difference.
 
-## My lab
+## My topology
 
-The exercise uses two switches and four PCs. I used the Packet Tracer lab file and kept two screenshots from the exercise.
+![Two switches and four PCs connected on the same LAN](lab-screenshot-02.png)
 
-![Lab screenshot 1](lab-screenshot-01.png)
+All four PCs are in the `192.168.1.0/24` network:
 
-![Lab screenshot 2](lab-screenshot-02.png)
+- PC1: `192.168.1.1`
+- PC2: `192.168.1.2`
+- PC3: `192.168.1.3`
+- PC4: `192.168.1.4`
+
+PC1 and PC2 connect to SW1, PC3 and PC4 connect to SW2, and the two switches are connected through their GigabitEthernet0/1 ports.
 
 ## What I worked on
 
-- Following how an ARP request is broadcast when a PC needs to find the MAC address associated with an IP address.
-- Looking at how a switch learns source MAC addresses from incoming Ethernet frames.
-- Connecting the contents of a MAC address table to the switch ports that lead toward different devices.
-- Understanding the difference between flooding a frame when the destination is unknown and forwarding a known unicast frame.
-- Using the lab to connect the Ethernet theory from the lessons to what Packet Tracer shows.
+I went into SW1's CLI and used `show mac address-table` to see which MAC addresses the switch had learned. The output showed **four dynamic entries in VLAN 1**:
+
+- Two entries learned on `Gi0/1`, the link toward SW2.
+- One entry on `Fa0/1`, toward PC1.
+- One entry on `Fa0/2`, toward PC2.
+
+Then I cleared the learned entries and checked the table again.
+
+```text
+SW1>enable
+SW1#show mac address-table
+SW1#clear mac address-table dynamic
+SW1#show mac address-table
+```
+
+After clearing the dynamic entries, the second table display showed no MAC address entries at that moment.
+
+![SW1 MAC address table before and after clearing dynamic entries](lab-screenshot-01.png)
 
 ## What I noticed
 
-One of the more useful ideas from these lessons is that a switch doesn't start out knowing where every device is. It learns by reading the **source MAC address** of frames it receives and associating those addresses with incoming ports.
+What stood out to me was that SW1 had learned four MAC addresses even though only two PCs were directly connected to it. The other two addresses were associated with `Gi0/1`, because those devices were reachable through SW2.
 
-I also wanted to keep ARP and switching separate in my notes. ARP helps an IPv4 host find a destination's MAC address on the local network; the switch uses its MAC address table to decide where to forward an Ethernet frame. Those are related steps, but they aren't the same job.
+That helped make the MAC address table easier to understand. A switch doesn't need a separate cable to every device; it needs to know which **port leads toward** the destination MAC address.
 
-A broadcast ARP request is flooded within the relevant VLAN, while a known unicast frame can be sent out the learned destination port. An unknown unicast frame may also be flooded until the destination is learned.
+Clearing the dynamic table also made the learning process more concrete. A switch can forget its learned entries, then learn them again as new frames arrive. The screenshot shows the table immediately after clearing, but doesn't show the relearning step.
 
 ## What I'm taking away
 
-I'm starting to see why understanding MAC address tables is useful for troubleshooting a LAN. When traffic isn't reaching the right device, it's important to know what a switch has learned, how ARP works, and which port a frame should travel through.
+I'm getting a clearer picture of how Layer 2 forwarding works. A switch learns from the **source MAC address** of incoming frames. If it knows the destination MAC address, it can forward the frame to the correct port. If the destination is an unknown unicast address, it generally floods the frame within the VLAN.
 
-The main focus of this lab was **Ethernet switching behavior**, not configuring routing or VLANs. I've kept the write-up focused on the switching concepts covered in the exercise rather than claiming tests or commands that I haven't separately documented.
+I'm also keeping ARP and MAC learning separate in my head: ARP helps a host discover an IPv4 neighbor's MAC address, while the switch's MAC address table helps it decide where to send Ethernet frames.
+
+This lab was about Ethernet switching and the MAC address table, not routing or configuring VLANs. My screenshots demonstrate the topology and the before-and-after MAC table commands; they don't independently show a ping or packet-by-packet ARP capture.
 
 ## Lab files
 
 - [Packet Tracer project](Lab-005.pkt)
-- [Lab screenshot 1](lab-screenshot-01.png)
-- [Lab screenshot 2](lab-screenshot-02.png)
+- [Network topology](lab-screenshot-02.png)
+- [MAC address table and CLI commands](lab-screenshot-01.png)
 
 ## Credit
 
-Based on Jeremy's IT Lab, Days 05 and 06, including the [Ethernet LAN Switching Packet Tracer exercise](https://youtu.be/Ig0dSaOQDI8). These are my study notes from following the lab.
+Based on Jeremy's IT Lab, Days 05 and 06, including the [Ethernet LAN Switching Packet Tracer lab](https://youtu.be/Ig0dSaOQDI8). These are my personal notes from working through the exercise.
