@@ -20,7 +20,7 @@ SRV1 and PC1 are on the `192.168.1.0/24` side of the network. R1 connects that L
 - R1 is labeled `.1` on both of its respective network segments.
 - R2 is labeled `.2` on the `10.0.0.0/24` segment.
 
-**Topology screenshot:** `network-topology.png` (included in the upload package; pending upload to GitHub).
+![My network topology](network-topology.png)
 
 ## What I worked on
 
@@ -37,7 +37,11 @@ It was useful seeing these as actual events instead of only reading their names 
 
 The event list tells me which protocol was involved and where the event appeared. It doesn't, by itself, show a complete breakdown of each OSI layer or prove that I analyzed the packet headers.
 
-**Simulation screenshots:** `simulation-packets.png` and `simulation-event-list.png` (pending upload to GitHub).
+### Simulation screenshots
+
+![Packets appearing on the network](simulation-packets.png)
+
+![OSPF and STP events in the Simulation Panel](simulation-event-list.png)
 
 ## What I'm taking away
 
@@ -47,12 +51,10 @@ This was an introduction to watching network activity. I'm not claiming that I c
 
 ## Lab files
 
-The files below are ready to upload to this directory:
-
-- `Lab-003.pkt` - Packet Tracer project
-- `network-topology.png` - Network overview
-- `simulation-packets.png` - Packets shown on the topology
-- `simulation-event-list.png` - Simulation Panel showing OSPF and STP events
+- [Packet Tracer project](Lab-003.pkt)
+- [Network topology](network-topology.png)
+- [Simulation packets](simulation-packets.png)
+- [Simulation event list](simulation-event-list.png)
 
 ## Credit
 
