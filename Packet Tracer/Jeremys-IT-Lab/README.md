@@ -12,6 +12,7 @@ Each lab includes its objective, a description of the topology, implementation n
 | 002 | Connecting Devices | Copper straight-through, crossover, fiber, cable distances | [View Lab 002](Lab-002-Connecting-Devices/README.md) |
 | 003 | OSI Model | Packet Tracer Simulation Mode, OSPF/STP event observation | [View Lab 003](Lab-003-OSI-Model/README.md) |
 | 004 | Basic Device Security | IOS CLI modes, enable passwords, password encryption, saving configurations | [View Lab 004](Lab-004-Basic-Device-Security/README.md) |
+| 005 | Ethernet LAN Switching (Days 05–06) | MAC learning, ARP, flooding and unicast forwarding | [View Lab 005](Lab-005-Ethernet-LAN-Switching/README.md) |
 
 ## Documentation Standards
 
