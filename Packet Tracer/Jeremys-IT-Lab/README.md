@@ -14,6 +14,7 @@ Each lab includes its objective, a description of the topology, implementation n
 | 004 | Basic Device Security | IOS CLI modes, enable passwords, password encryption, saving configurations | [View Lab 004](Lab-004-Basic-Device-Security/README.md) |
 | 005 | Ethernet LAN Switching (Days 05–06) | MAC learning, ARP, flooding and unicast forwarding | [View Lab 005](Lab-005-Ethernet-LAN-Switching/README.md) |
 | 006 | IPv4 Addressing (Day 08) | Router interface addressing, no shutdown, show commands, saving configuration | [View Lab 006](Lab-006-IPv4-Addressing/README.md) |
+| 007 | Configuring Interfaces (Day 09) | Router and switch interface settings, port status, and disabling unused ports | [View Lab 007](Lab-007-Configuring-Interfaces/README.md) |
 
 ## Documentation Standards
 
