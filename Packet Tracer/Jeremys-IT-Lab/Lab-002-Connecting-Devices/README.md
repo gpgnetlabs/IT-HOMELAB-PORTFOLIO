@@ -24,7 +24,7 @@ The switches form two groups beneath R2 and R4. The router links have three dist
 
 The 3 km and 250 m examples helped put the difference between shorter and longer fiber connections into context. In real networks, the supported distance also depends on the Ethernet standard and transceivers being used.
 
-*Topology screenshot: to be added as `network-topology.png`.*
+![My completed Packet Tracer topology](network-topology.png)
 
 ## What I worked on
 
@@ -47,8 +47,8 @@ This exercise was about **cable selection and connecting devices**. It wasn't ab
 
 ## Lab files
 
-- Packet Tracer project: `Lab-002.pkt` (upload pending)
-- Topology screenshot: `network-topology.png` (upload pending)
+- [Packet Tracer project](Lab-002.pkt)
+- [Topology screenshot](network-topology.png)
 
 ## Credit
 
