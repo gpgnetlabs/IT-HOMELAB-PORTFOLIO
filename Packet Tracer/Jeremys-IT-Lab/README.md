@@ -10,6 +10,7 @@ Each lab includes its objective, a description of the topology, implementation n
 | --- | --- | --- | --- |
 | 001 | Packet Tracer Introduction | Network topology, device identification, LAN/WAN concepts | [View Lab 001](Lab-001-Packet-Tracer-Introduction/README.md) |
 | 002 | Connecting Devices | Copper straight-through, crossover, fiber, cable distances | [View Lab 002](Lab-002-Connecting-Devices/README.md) |
+| 003 | OSI Model | Packet Tracer Simulation Mode, OSPF/STP event observation | [View Lab 003](Lab-003-OSI-Model/README.md) |
 
 ## Documentation Standards
 
