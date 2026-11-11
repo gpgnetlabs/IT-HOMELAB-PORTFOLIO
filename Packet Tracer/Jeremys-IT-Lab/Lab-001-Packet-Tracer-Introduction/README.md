@@ -12,7 +12,7 @@ This first lab is an introduction to Packet Tracer. The topology has two branche
 
 ## My topology
 
-![Packet Tracer network topology](Screenshots/network-topology.png)
+![Packet Tracer network topology](network-topology.png)
 
 The network includes:
 
@@ -52,7 +52,7 @@ I'm keeping these notes as I go so I can look back at the basics when I move int
 ## Lab files
 
 - [Packet Tracer project](Lab-001.pkt)
-- [Topology screenshot](Screenshots/network-topology.png)
+- [Topology screenshot](network-topology.png)
 
 ## Credit
 
