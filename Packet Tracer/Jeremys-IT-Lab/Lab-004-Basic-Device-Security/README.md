@@ -50,15 +50,27 @@ Near the end of the lab, I ran `write` and got an `[OK]` confirmation. I then us
 
 ## Screenshots
 
-I kept screenshots of the CLI at different points in the exercise. They cover the initial configuration, the password-encryption change, adding the enable secret, and checking the saved configuration.
+I kept screenshots of the CLI at different points in the exercise. They show the initial configuration, how the password appears after encryption is enabled, the enable secret, and the saved configuration.
 
-The files will be added here once uploaded to GitHub:
+### Changing the hostname and setting the enable password
 
-- `cli-01-hostname-password.png`
-- `cli-02-password-encryption.png`
-- `cli-03-enable-secret.png`
-- `cli-04-running-config.png`
-- `cli-05-save-startup-config.png`
+![Initial hostname and enable password configuration](cli-01-hostname-password.png)
+
+### Checking the running configuration and turning on password encryption
+
+![Running configuration and service password-encryption](cli-02-password-encryption.png)
+
+### Adding an enable secret
+
+![Enable secret configuration](cli-03-enable-secret.png)
+
+### Reviewing the resulting configuration
+
+![Running configuration after password changes](cli-04-running-config.png)
+
+### Saving and checking the startup configuration
+
+![Saving the configuration and viewing startup-config](cli-05-save-startup-config.png)
 
 ## What I'm taking away
 
@@ -68,8 +80,8 @@ This was a basic CLI and device-security exercise, not a full router-hardening s
 
 ## Lab files
 
-- `Lab-004.pkt` - Packet Tracer project (upload pending)
-- CLI screenshots listed above (upload pending)
+- [Packet Tracer project](Lab-004.pkt)
+- [CLI screenshots](#screenshots) - Five screenshots documenting the configuration steps
 
 ## Credit
 
