@@ -65,14 +65,31 @@ I also reviewed `show running-config` and saw the descriptions, IP addresses, an
 
 ### CLI screenshots
 
-These screenshots show the configuration process in order. The images will be embedded when I upload the files to this folder.
+These screenshots show the configuration process in order.
 
-- `cli-01-initial-interface-check.png`
-- `cli-02-interface-configuration.png`
-- `cli-03-interface-verification.png`
-- `cli-04-running-config.png`
-- `cli-05-interface-details.png`
-- `cli-06-save-config.png`
+### Initial interface check and first configuration
+
+![Initial interface status and GigabitEthernet0/0 configuration](cli-01-initial-interface-check.png)
+
+### Configuring the remaining router interfaces
+
+![GigabitEthernet0/1 and GigabitEthernet0/2 configuration](cli-02-interface-configuration.png)
+
+### Verifying the configured IP addresses and interface states
+
+![Show IP interface brief results](cli-03-interface-verification.png)
+
+### Reviewing the running configuration
+
+![Running configuration overview](cli-04-running-config.png)
+
+### Checking interface descriptions and subnet masks
+
+![Configured interface addresses, masks, and descriptions](cli-05-interface-details.png)
+
+### Saving the configuration
+
+![Write memory confirmation](cli-06-save-config.png)
 
 ## What I noticed
 
@@ -90,8 +107,8 @@ These screenshots show R1 interface configuration and verification. They don't i
 
 ## Lab files
 
-- `Lab-006.pkt` - Packet Tracer project (upload pending)
-- Six CLI screenshots listed above (upload pending)
+- [Packet Tracer project](Lab-006.pkt)
+- [CLI screenshots](#cli-screenshots) - Six screenshots showing the router configuration and verification
 
 ## Credit
 
